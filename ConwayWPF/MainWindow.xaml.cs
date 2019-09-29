@@ -11,7 +11,8 @@ namespace ConwayWPF
 {
     public partial class MainWindow : Window
     {
-        private static readonly int TickIntervalMilliseconds = 150;
+        private static readonly string WindowTitleTemplate = "Conway's Game of Life - Step {0}";
+        private static readonly int TickIntervalMilliseconds = 300;
         private static readonly int BoardWidth = 100;
         private static readonly int BoardHeight = 70;
         private static readonly int CellSize = 10;
@@ -24,6 +25,7 @@ namespace ConwayWPF
         private readonly Rectangle[,] _universe = new Rectangle[BoardHeight, BoardWidth];
 
         private bool _running = false;
+        private int _step = 1;
 
         public MainWindow()
         {
@@ -37,12 +39,18 @@ namespace ConwayWPF
         {
             _timer.Start();
             _running = true;
+            this.UpdateWindowTitle();
         }
 
         private void Pause()
         {
             _timer.Stop();
             _running = false;
+        }
+
+        private void UpdateWindowTitle()
+        {
+            this.Title = string.Format(WindowTitleTemplate, _step);
         }
 
         private void DrawDeadCell(int x, int y)
@@ -102,6 +110,9 @@ namespace ConwayWPF
             {
                 this.ChangeCellState(cell);
             }
+
+            _step += 1;
+            this.UpdateWindowTitle();
         }
 
         private void ChangeCellState(Rectangle cell)
