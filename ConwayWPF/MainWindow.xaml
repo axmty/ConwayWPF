@@ -1,0 +1,10 @@
+﻿<Window x:Class="ConwayWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Conway's Game of Life"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        KeyDown="Window_KeyDown"
+        ContentRendered="Window_ContentRendered">
+    <Canvas Name="Area" ClipToBounds="True"></Canvas>
+</Window>
