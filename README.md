@@ -3,7 +3,7 @@
 <br/>
 
 <img src="https://ametgy.github.io/page/conway.png" />
-This is a graphic Conway's Game of Life implementation.
+This is a graphic Conway's Game of Life implementation in WPF.
 
 ## Technologies
 * .NET Core 3
