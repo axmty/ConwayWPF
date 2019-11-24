@@ -13,9 +13,9 @@ namespace ConwayWPF
     {
         private static readonly string WindowTitleTemplate = "Conway's Game of Life - Step {0}";
         private static readonly int TickIntervalMilliseconds = 300;
-        private static readonly int BoardWidth = 100;
-        private static readonly int BoardHeight = 70;
-        private static readonly int CellSize = 10;
+        private static readonly int BoardWidth = 30;
+        private static readonly int BoardHeight = 30;
+        private static readonly int CellSize = 20;
         private static readonly Brush AliveCellColor = Brushes.Black;
         private static readonly Brush DeadCellColor = Brushes.White;
         private static readonly Brush StrokeColor = Brushes.LightGray;
